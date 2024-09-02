@@ -62,15 +62,27 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
+        android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/container_black"
         android:gravity="center"
+        android:paddingHorizontal="75dp"
         android:textColor="@color/white"
         android:textSize="24sp"
-        android:background="@drawable/container_black"
-        android:paddingHorizontal="75dp"
-        app:layout_constraintStart_toStartOf="@id/phone"
+        app:layout_constraintBottom_toTopOf="@+id/text_1"
         app:layout_constraintEnd_toEndOf="@id/phone"
-        app:layout_constraintBottom_toTopOf="@+id/text_1" />
+        app:layout_constraintStart_toStartOf="@id/phone" />
+        
+    <ImageView
+        android:layout_height="580dp"
+        android:layout_width="match_parent"
+        android:src="@drawable/ic_nextbtn"
+        android:layout_marginBottom="-500dp"
+        android:layout_marginStart="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/phone"
+        />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
