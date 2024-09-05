@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/orange1"
+    tools:context=".Activits.WelcomeScreen2">
+
+    <ImageView
+        android:id="@+id/logo_app_ws"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/conteiner_white"
+        android:src="@drawable/ic_help_bot"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/text_top_1"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Uma nova forma de vender na suas plataformas digitais favoritas"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:layout_marginTop="-15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_app_ws" />
+
+    <ImageView
+        android:id="@+id/phone"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-30dp"
+        android:src="@drawable/ic_telephone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="@id/phone"
+        app:layout_constraintBottom_toBottomOf="@id/phone"
+        app:layout_constraintStart_toStartOf="@id/phone"
+        app:layout_constraintEnd_toEndOf="@id/phone">
+
+        <TextView
+            android:id="@+id/text_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:gravity="start"/>
+
+        <EditText
+            android:id="@+id/edit_text_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/container_black"
+            android:inputType="textEmailAddress"
+            android:gravity="center"
+            android:paddingHorizontal="75dp"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:layout_margin="15dp"
+            app:layout_constraintBottom_toTopOf="@+id/text_1"
+            app:layout_constraintEnd_toEndOf="@id/phone"
+            app:layout_constraintStart_toStartOf="@id/phone" />
+
+        <EditText
+            android:id="@+id/edit_text_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/container_black"
+            android:gravity="center"
+            android:paddingHorizontal="75dp"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:layout_margin="15dp"
+            android:inputType="number"
+            app:layout_constraintBottom_toTopOf="@+id/text_1"
+            app:layout_constraintEnd_toEndOf="@id/phone"
+            app:layout_constraintStart_toStartOf="@id/phone" />
+
+        <TextView
+            android:id="@+id/text_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Telefone"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:gravity="start"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/btn_next"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:src="@drawable/ic_next_btn"
+        android:layout_marginBottom="0dp"
+        android:layout_marginStart="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/conteiner_white"
+        android:paddingHorizontal="25dp"
+        android:paddingVertical="12dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_women"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,6 +33,19 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
+    buildFeatures {
+        compose= true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.2"
+    }
+
 }
 
 dependencies {
@@ -45,4 +58,9 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation("androidx.compose.ui:ui:1.3.3")
+    implementation("androidx.compose.ui:ui-tooling-preview:1.3.3")
+    debugImplementation ("androidx.compose.ui:ui-tooling:1.3.3")
+    debugImplementation ("androidx.compose.ui:ui-test-manifest:1.3.3")
 }
