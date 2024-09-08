@@ -12,7 +12,7 @@
         android:id="@+id/logo_app_ws"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:background="@drawable/conteiner_white"
+        android:background="@drawable/container_white"
         android:src="@drawable/ic_help_bot"
         android:layout_marginTop="8dp"
         android:layout_marginStart="15dp"
@@ -21,15 +21,17 @@
 
     <TextView
         android:id="@+id/text_top_1"
-        android:layout_width="300dp"
+        android:layout_width="309dp"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Uma nova forma de vender na suas plataformas digitais favoritas"
         android:textColor="@color/white"
-        android:textSize="24sp"
-        android:layout_marginTop="-15dp"
+        android:textSize="20sp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo_app_ws" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/logo_app_ws" />
 
     <ImageView
         android:id="@+id/phone"
@@ -108,7 +110,7 @@
         android:layout_marginStart="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:background="@drawable/conteiner_white"
+        android:background="@drawable/container_white"
         android:paddingHorizontal="25dp"
         android:paddingVertical="12dp" />
 

@@ -22,8 +22,7 @@ class SplasheScreen : AppCompatActivity() {
         setContentView(R.layout.activity_splashe)
 
         dB = Db(this)
-        supportActionBar?.hide()
-        window.statusBarColor = getColor(R.color.black)
+        window.statusBarColor = getColor(R.color.orange1)
 
         Handler(Looper.getMainLooper()).postDelayed({
 

@@ -2,6 +2,7 @@ package co.apps.gvs.Activits
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -21,14 +22,12 @@ class WelcomeScreen : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(binding.root)
         binding = ActivityWelcomeBinding.inflate(layoutInflater)
 
         dB = Db(this)
 
-        binding.btnNext.setOnClickListener {
-
+        binding.btnNext.setOnClickListener(View.OnClickListener {
             if (binding.editText.text.toString().isEmpty()) {
                 binding.text1.setTextColor(getColor(R.color.red1))
             }else{
@@ -42,8 +41,7 @@ class WelcomeScreen : AppCompatActivity() {
                 startActivity(intent)
 
             }
-
-        }
+        })
 
     }
 }

@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="15dp"
-        android:background="@drawable/conteiner_white"
+        android:background="@drawable/container_white"
         android:src="@drawable/ic_logo_app"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
