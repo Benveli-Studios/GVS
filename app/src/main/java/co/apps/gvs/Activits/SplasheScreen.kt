@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -18,20 +19,29 @@ class SplasheScreen : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_splashe)
 
         dB = Db(this)
         window.statusBarColor = getColor(R.color.orange1)
 
-        Handler(Looper.getMainLooper()).postDelayed({
+        val test = dB.VerificadoPopulaçãoPessoas(this)
 
-            if (dB.VerificadoPopulaçãoPessoas()){
+        Handler(Looper.getMainLooper()).postDelayed({
+            if (test == -1 || test == 4){
+                val itent = Intent(this, MainScreen::class.java)
+                startActivity(itent)
+                finish()
+            } else if(test == 0 || test == 1){
                 val itent = Intent(this, WelcomeScreen::class.java)
                 startActivity(itent)
-                finish()}
-            else{
-                val itent = Intent(this, MainScreen::class.java)
+                finish()
+            } else if(test == 2 || test == 3){
+            val itent = Intent(this, WelcomeScreen2::class.java)
+            startActivity(itent)
+            finish()
+            } else if(test == 4) {
+                Toast.makeText(this, "Erro", Toast.LENGTH_SHORT).show()
+                val itent = Intent(this, SplasheScreen::class.java)
                 startActivity(itent)
                 finish()
             }

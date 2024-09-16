@@ -14,14 +14,13 @@ val dBNomePessoa = "dBNomePessoa"
 //val dBImagemPessoa = "dBImagemPessoa" $dBImagemPessoa TEXT,
 
 class Db(contexT: Context)
-    : SQLiteOpenHelper(contexT, dBNome, null, 1) {
+    : SQLiteOpenHelper(contexT, dBNome, null, 2) {
     override fun onCreate(db: SQLiteDatabase?) {
         val sql = """
             CREATE TABLE $dBTabelaPessoas (
             $dBEmailPessoa TEXT,
             $dBNumeroPessoa TEXT,
             $dBNomePessoa TEXT, 
-             
             id INTEGER PRIMARY KEY AUTOINCREMENT
             );""".trimIndent()
         db?.execSQL(sql)

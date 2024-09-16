@@ -4,8 +4,9 @@ import co.apps.gvs.DataBasse.Db
 import co.apps.gvs.DataBasse.dBNomePessoa
 import co.apps.gvs.DataBasse.dBTabelaPessoas
 
-fun Db.ExcluirPessoas(pessoaId: Int){
+fun Db.ExcluirPessoas(){
 
-    writableDatabase.delete("$dBTabelaPessoas", "$dBNomePessoa=($pessoaId)", null)
+    //writableDatabase.delete("$dBTabelaPessoas", "$dBNomePessoa=($pessoaId)", null)
+    writableDatabase.delete("$dBTabelaPessoas", null, null)
 
 }
