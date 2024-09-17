@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import co.apps.gvs.DataBasse.Db
 import co.apps.gvs.DataBasse.InteraçõesBásicas.SalvarPessoas
+import co.apps.gvs.DataBasse.InteraçõesBásicas.VerificadoPopulaçãoPessoas
 import co.apps.gvs.Funs.AddPerson2
 import co.apps.gvs.Objetos.Objeto
 import co.apps.gvs.R
@@ -28,7 +29,7 @@ class WelcomeScreen2 : AppCompatActivity() {
         dB = Db(this)
 
         binding.btnNext.setOnClickListener(View.OnClickListener{
-            AddPerson2()
+            AddPerson2(intent.getStringExtra("name").toString())
         })
 
     }

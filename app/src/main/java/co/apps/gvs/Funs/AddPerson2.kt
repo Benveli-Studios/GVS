@@ -8,7 +8,7 @@ import co.apps.gvs.DataBasse.InteraçõesBásicas.SalvarPessoas
 import co.apps.gvs.Objetos.Objeto
 import co.apps.gvs.R
 
-fun WelcomeScreen2.AddPerson2() {
+fun WelcomeScreen2.AddPerson2(name: String) {
     val a = if (binding.editText1.text.toString().isEmpty()) {
         binding.text1.setTextColor(getColor(R.color.red1))
         false
@@ -29,7 +29,7 @@ fun WelcomeScreen2.AddPerson2() {
         val email = binding.editText1.text.toString()
         val telefone = binding.editText2.text.toString()
         val text: String
-        val pessoaNome = Objeto(ObjNumeroPessoas = telefone, ObjNomesPessoas = email)
+        val pessoaNome = Objeto(ObjNumeroPessoas = telefone, ObjNomesPessoas = name, ObjEmailPessoas = email)
         if (dB.SalvarPessoas(pessoaNome)) text =
             "$email e $telefone adicionado com sucesso" else text =
             "Erro ao adicionar $email e $telefone"

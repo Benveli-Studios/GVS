@@ -1,10 +1,8 @@
-@file:Suppress("UNREACHABLE_CODE")
 
 package co.apps.gvs.DataBasse.InteraçõesBásicas
 
 import android.content.Context
 import android.database.Cursor
-import android.widget.Toast
 import co.apps.gvs.DataBasse.Db
 import co.apps.gvs.DataBasse.dBEmailPessoa
 import co.apps.gvs.DataBasse.dBNomePessoa
@@ -12,7 +10,7 @@ import co.apps.gvs.DataBasse.dBNumeroPessoa
 import co.apps.gvs.DataBasse.dBTabelaPessoas
 import co.apps.gvs.Objetos.Objeto
 
-fun Db.VerificadoPopulaçãoPessoas(context: Context):Int {
+fun Db.VerificadoPopulaçãoPessoas():Boolean {
 
     val pessoa = mutableListOf<Objeto>()
     val sql = "SELECT * FROM $dBTabelaPessoas"
@@ -28,19 +26,5 @@ fun Db.VerificadoPopulaçãoPessoas(context: Context):Int {
         };cursor.close()
     }
 
-    try{
-        if (pessoa.size <= 1) {
-            return if (pessoa.size == 1) {
-                -1
-            }else if (pessoa[0].ObjNomesPessoas.equals("")) {
-                1
-            } else if (pessoa[0].ObjNumeroPessoas.equals("")) {
-                2
-            } else if (pessoa[0].ObjEmailPessoas.equals("")) {
-                3
-            }else 4
-    
-        }else return 5; ExcluirPessoas()
-    }catch (e: Exception){
-        return 4
-    }}
+    return if (pessoa.size == 1) true else false
+}

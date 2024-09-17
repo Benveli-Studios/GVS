@@ -12,6 +12,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import co.apps.gvs.DataBasse.Db
 import co.apps.gvs.DataBasse.InteraçõesBásicas.SalvarPessoas
+import co.apps.gvs.DataBasse.InteraçõesBásicas.VerificadoPopulaçãoPessoas
 import co.apps.gvs.DataBasse.dBNomePessoa
 import co.apps.gvs.Funs.AddPerson
 import co.apps.gvs.Objetos.Objeto
