@@ -15,6 +15,9 @@ fun WelcomeScreen.AddPerson() {
     }else{
         val intent = Intent(this, WelcomeScreen2::class.java)
         intent.putExtra("name", binding.editText.text.toString())
+        val imageUser:String
+        if (imageUri.equals("a")) imageUser = R.drawable.container.toString() else imageUser = imageUri
+        intent.putExtra("imageUser", imageUser)
         startActivity(intent)
 
     }

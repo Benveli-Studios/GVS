@@ -3,19 +3,9 @@ package co.apps.gvs.Activits
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.ImageView
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import co.apps.gvs.DataBasse.Db
-import co.apps.gvs.DataBasse.InteraçõesBásicas.SalvarPessoas
-import co.apps.gvs.DataBasse.InteraçõesBásicas.VerificadoPopulaçãoPessoas
-import co.apps.gvs.DataBasse.dBNomePessoa
 import co.apps.gvs.Funs.AddPerson
-import co.apps.gvs.Objetos.Objeto
 import co.apps.gvs.R
 import co.apps.gvs.databinding.ActivityWelcomeBinding
 
@@ -23,6 +13,11 @@ class WelcomeScreen : AppCompatActivity() {
 
     lateinit var binding: ActivityWelcomeBinding
     lateinit var dB: Db
+    var imageUri = "a"
+
+    companion object {
+        val IMAGE_REQUEST_CODE = 100
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,5 +31,24 @@ class WelcomeScreen : AppCompatActivity() {
             AddPerson()
         })
 
+        binding.imageUsser.setOnClickListener(View.OnClickListener {
+            PegarImagemGaleria()
+        })
+
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == IMAGE_REQUEST_CODE && resultCode == RESULT_OK) {
+            binding.imageUsser.setImageURI(data?.data)
+            imageUri = data?.data.toString()
+        }
+    }
+
+    fun PegarImagemGaleria(){
+        val itent = Intent(Intent.ACTION_PICK)
+        itent.type = "image/*"
+        startActivityForResult(itent, IMAGE_REQUEST_CODE)
     }
 }

@@ -3,6 +3,7 @@ package co.apps.gvs.DataBasse.InteraçõesBásicas
 import androidx.core.content.contentValuesOf
 import co.apps.gvs.DataBasse.Db
 import co.apps.gvs.DataBasse.dBEmailPessoa
+import co.apps.gvs.DataBasse.dBImagemPessoa
 import co.apps.gvs.DataBasse.dBNomePessoa
 import co.apps.gvs.DataBasse.dBNumeroPessoa
 import co.apps.gvs.DataBasse.dBTabelaPessoas
@@ -15,6 +16,7 @@ fun Db.SalvarPessoas(listItem: Objeto):Boolean{
         put("$dBEmailPessoa", listItem.ObjEmailPessoas)
         put("$dBNumeroPessoa", listItem.ObjNumeroPessoas)
         put("$dBNomePessoa", listItem.ObjNomesPessoas)
+        put("$dBImagemPessoa", listItem.ObjImagemPessoas)
     })
     return test > 0
 }
